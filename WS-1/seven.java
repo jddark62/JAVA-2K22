@@ -10,6 +10,7 @@
  * February has 28 days in a non-leap year and 29 days in a leap year.  
  * Echo the input and print either valid date or invalid date as output.
  */
+import java.util.Dictionary;
 import java.util.Scanner;
 
 /**
@@ -19,12 +20,34 @@ public class seven {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter the month");
         int month = input.nextInt();
-        System.out.println("Enter the day");
         int day = input.nextInt();
-        System.out.println("Enter the year");
         int year = input.nextInt();
-        
+
+        Dictionary<Integer, Integer> months = new Dictionary<Integer, Integer>();
+        months.put(1, 31);
+        months.put(2, 28);
+        months.put(3, 31);
+        months.put(4, 30);
+        months.put(5, 31);
+        months.put(6, 30);
+        months.put(7, 31);
+        months.put(8, 30);
+        months.put(9, 31);
+        months.put(10, 30);
+        months.put(11, 31);
+        months.put(12, 30);
+        if (year % 4 == 0) {
+            months.put(2, 29);
+        }
+        if (month > 12 || month < 1) {
+            System.out.println("Invalid month");
+        } else if (day > months.get(month) || day < 1) {
+            System.out.println("Invalid day");
+        } else if (year < 0) {
+            System.out.println("Invalid year");
+        } else {
+            System.out.println("Valid date");
+        }
     }
 }

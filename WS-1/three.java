@@ -12,6 +12,7 @@
  * C Clubs 
  * and displays the full name of the card.
  */
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -19,29 +20,30 @@ import java.util.Scanner;
  */
 public class three {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the card");
-        String card = sc.next();
-        String cardName = "";
-        if(str.charAt(0).equalsIgnoreCase('a'))
-            name = "Ace";
-        else if(str.charAt(0).equalsIgnoreCase('j'))
-            name = "Jack";
-        else if(str.charAt(0).equalsIgnoreCase('q'))
-            name = "Queen";
-        else if(str.charAt(0).equalsIgnoreCase('k'))
-            name = "King";
-        else if(str.charAt(0).equalsIgnoreCase('d'))
-            name = "Diamonds";
-        else if(str.charAt(0).equalsIgnoreCase('h'))
-            name = "Hearts";
-        else if(str.charAt(0).equalsIgnoreCase('s'))
-            name = "Spades";
-        else if(str.charAt(0).equalsIgnoreCase('c'))
-            name = "Clubs";
-        else
-            name = "Invalid card";
-
+        Scanner input = new Scanner(System.in);
+        HashMap<String, String> cardMap = new HashMap<String, String>();
+        cardMap.put("A", "Ace");
+        cardMap.put("2", "Two");
+        cardMap.put("3", "Three");
+        cardMap.put("4", "Four");
+        cardMap.put("5", "Five");
+        cardMap.put("6", "Six");
+        cardMap.put("7", "Seven");
+        cardMap.put("8", "Eight");
+        cardMap.put("9", "Nine");
+        cardMap.put("10", "Ten");
+        cardMap.put("J", "Jack");
+        cardMap.put("Q", "Queen");
+        cardMap.put("K", "King");
+        cardMap.put("D", "Diamonds");
+        cardMap.put("H", "Hearts");
+        cardMap.put("S", "Spades");
+        cardMap.put("C", "Clubs");
+        String card = input.nextLine();
+        String[] cardSplit = card.split(" ");
+        String cardValue = cardSplit[0];
+        String cardSuit = cardSplit[1];
+        System.out.println(cardMap.get(cardValue) + " of " + cardMap.get(cardSuit));
     }
 
 }
