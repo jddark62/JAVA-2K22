@@ -52,13 +52,15 @@ class Student{
 public class two {
 
     public static void main(String[] args) {
-        
-        Student student = new Student("Ronaldo");
-        student.addQuiz(80);
-        student.addQuiz(50);
-        student.addQuiz(80);
-        System.out.println("Student Name: " + student.getName());
-        System.out.println("Total Score is: " + student.getTotalScore());
-        System.out.println("Average Score is: " + student.getAverageScore());
+        System.out.println("Enter the student name: ");
+        Scanner input = new Scanner(System.in);
+        String name = input.nextLine();
+        Student student = new Student(name);
+        System.out.println("Enter the quiz score: ");
+        int score = input.nextInt();
+        student.addQuiz(score);
+        System.out.println("The student's name is " + student.getName());
+        System.out.println("The student's total score is " + student.getTotalScore());
+        System.out.println("The student's average score is " + student.getAverageScore());
     }
 }
