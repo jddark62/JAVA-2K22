@@ -1,40 +1,5 @@
 /*
- * The ABC asset management company wants to manage its customers' equity and commodity investments 
- * in the following way.
- * You are expected to create the below listed set of reusable libraries as per specification using 
- * packages.
- * 
- * SHARE MARKET - package 1
- * You will have to create a set of classes for computing the weekly return, monthly return and yearly return
- * and 5 years of both equity and commodity investments. 
- * Returns should be calculated in percentage.
- * define the behaviour of these two classes by creating an interface Investment.
- * This interface includes an instance variable current date (use java library for date) that will be used to calculate the returns
- * these two sub classes should include getter and setter methods and 
- * COMMODITY: code, title, qty, purchase price, purchase date (use java date)
- * EQUITY: code, name, qty, purchase price, purchase date (use java date)
- * 
- *  *  * CUSTOMERS - package 2
- * There are two kins of customers eg. retail and corporate customers. both will inherit the features of 
- * customer class. The customers can purchase any number of equities and commodities.
- * 
- * Customer class should include getter and setter methods and
- * Additional features to be included
- * Retail_customer: Aadhar number, pan number
- * Corporate_customer: company registration number, company pan number
- * 
- * CUSTOMER CLASS
- * Customer code
- * name
- * Address
- * Demat No
- * Equity[] of type equity
- * Commodity[] of type commodity
- * Get equity_purchase()
- * Get commodity_purchase()
- * Compute returns()
- * 
- * 
+
  * Create another package 3 DRIVER which includes your java application
  * with the main method
  * Write an interactive code to accept current market price of both equities and commodities
@@ -49,6 +14,16 @@
  * ----------------------------------------------------------------------
  * Total Investment                                          Current Value
  */
+
+package driver;
+
+import java.util.Scanner;
+
+import sharemarket.*;
+
+import java.util.ArrayList;
+
+import customers.*;
 
 package driver;
 

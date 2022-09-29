@@ -7,33 +7,33 @@
  * The printOrderItems() method prints information about each order item 
  * via the toString() method of the OrderItem class.
  */
-
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-public class Order{
-    private List<OrderItem> orderItems = new ArrayList<OrderItem>();
-    
-    public void addOrderItem(OrderItem orderItem){
-        orderItems.add(orderItem);
-    }
-    
-    public double getTotal(){
-        double total = 0;
-        for(OrderItem orderItem : orderItems){
-            total += orderItem.getTotal();
+    public class Order {
+        private ArrayList<OrderItem> orderItems;
+        
+        public Order() {
+            orderItems = new ArrayList<OrderItem>();
         }
-        return total;
-    }
-    
-    public String toString(){
-        StringBuilder sb = new StringBuilder();
-        sb.append("Order: ");
-        for(OrderItem orderItem : orderItems){
-            sb.append(orderItem.toString());
+        
+        public void addOrderItem(OrderItem orderItem) {
+            orderItems.add(orderItem);
         }
-        return sb.toString();
+        
+        public int getTotal() {
+            int total = 0;
+            for (OrderItem orderItem : orderItems) {
+                total += orderItem.getCost();
+            }
+            return total;
+        }
+        
+        public void printOrderItems() {
+            for (OrderItem orderItem : orderItems) {
+                System.out.println(orderItem);
+            }
+        }
+        
+        public String toString() {
+            return "Order: " + orderItems;
+        }
     }
-    
-}

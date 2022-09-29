@@ -4,23 +4,22 @@
  * The getCost() method returns the multiplication of its quantity 
  * and price.
  */
-import java.util.Random;
 public class OrderItem {
     private String upc;
     private int quantity;
-    private double price;
+    private int price;
     
-    public OrderItem(String upc, int quantity, double price){
+    public OrderItem(String upc, int quantity, int price) {
         this.upc = upc;
         this.quantity = quantity;
         this.price = price;
     }
     
-    public int getCost(){
-        return (double)quantity * price;
+    public int getCost() {
+        return quantity * price;
     }
     
-    public String toString(){
-        return "UPC: " + upc + " Quantity: " + quantity + " Price: " + price + " Cost: " + getCost();
+    public String toString() {
+        return "UPC: " + upc + " Quantity: " + quantity + " Price: " + price;
     }
 }

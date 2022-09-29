@@ -14,10 +14,11 @@
  * do not add delivery charge, but just return 0.
 
  */
-import java.util.ArrayList;
-import java.util.Random;
 public class RushOrder extends Order {
     private int deliveryDay;
+    protected static final int ONE_DAY_DELIVERY = 25;
+    protected static final int TWO_DAY_DELIVERY = 15;
+    protected static final int THREE_DAY_DELIVERY = 10;
     
     public RushOrder(int deliveryDay) {
         this.deliveryDay = deliveryDay;
@@ -27,17 +28,16 @@ public class RushOrder extends Order {
         int total = super.getTotal();
         if (total > 0) {
             if (deliveryDay <= 3) {
-                total += 25;
-            } else if (deliveryDay <= 5) {
-                total += 15;
+                total += deliveryDay * ONE_DAY_DELIVERY;
             } else {
-                total += 10;
+                total += THREE_DAY_DELIVERY;
             }
         }
         return total;
     }
     
     public String toString() {
-        return super.toString() + " (delivery day: " + deliveryDay + ")";
+        return super.toString() + " Delivery Day: " + deliveryDay;
     }
+    
 }
