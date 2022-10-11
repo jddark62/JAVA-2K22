@@ -9,8 +9,3 @@
 
  */
 
-import java.util.*;
-
-class MyHashSet <T> {
-    
-}
